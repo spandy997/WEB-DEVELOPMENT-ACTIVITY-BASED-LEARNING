@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh & Nourish</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff8ef;
+    color: #603f32;
+}
+
+header {
+    height: 230px;
+    background: linear-gradient(#0005,#0007),
+    url("https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1200");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 42px;
+    letter-spacing: 3px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+nav {
+    background: #a65e43;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+section {
+    padding: 30px 7%;
+    text-align: center;
+}
+
+h2 {
+    color: #a65e43;
+    margin-bottom: 20px;
+}
+
+.search {
+    padding: 11px;
+    width: 80%;
+    max-width: 350px;
+    border: 1px solid #d9aa8d;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.filters button {
+    padding: 9px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 20px;
+    background: #f0d4bd;
+    color: #603f32;
+    cursor: pointer;
+}
+
+.filters button:hover,
+.filters button.active {
+    background: #a65e43;
+    color: white;
+}
+
+.food-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.food-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px #0001;
+    padding-bottom: 14px;
+}
+
+.food-card img {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+}
+
+.food-card h3 {
+    padding: 10px 5px 5px;
+    color: #8c4d36;
+}
+
+.food-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 0 8px;
+    color: #806354;
+}
+
+.nutrition {
+    background: #f7e7d5;
+}
+
+.nutrition-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.nutrition-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.nutrition-card h3 {
+    color: #a65e43;
+    margin-bottom: 8px;
+}
+
+#about {
+    background: #fff8ef;
+}
+
+footer {
+    background: #a65e43;
+    color: white;
+    padding: 18px;
+    text-align: center;
+}
+
+@media(max-width:700px) {
+    .food-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .nutrition-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:420px) {
+    .nutrition-container {
+        grid-template-columns: 1fr;
+    }
+    header h1 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>FRESH & NOURISH</h1>
+    <p>Eat Fresh • Live Healthy</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#foods">Foods</a>
+    <a href="#nutrition">Nutrition</a>
+    <a href="#about">About</a>
+</nav>
+
+<section id="home">
+    <h2>Welcome to Fresh & Nourish</h2>
+    <p>Discover healthy fruits, vegetables and essential nutrients.</p>
+</section>
+
+<section id="foods">
+    <h2>Fruits & Vegetables</h2>
+
+    <input class="search" id="search"
+    type="text" placeholder="Search food...">
+
+    <div class="filters">
+        <button class="active" onclick="showFoods('All',this)">All</button>
+        <button onclick="showFoods('Fruit',this)">Fruits</button>
+        <button onclick="showFoods('Vegetable',this)">Vegetables</button>
+    </div>
+
+    <div class="food-container" id="foodContainer"></div>
+</section>
+
+<section id="nutrition" class="nutrition">
+    <h2>Essential Nutrients</h2>
+
+    <div class="nutrition-container">
+        <div class="nutrition-card">
+            <h3>Carbohydrates</h3>
+            <p>Provide energy to the body.</p>
+        </div>
+
+        <div class="nutrition-card">
+            <h3>Proteins</h3>
+            <p>Help growth and repair.</p>
+        </div>
+
+        <div class="nutrition-card">
+            <h3>Fats</h3>
+            <p>Store energy and support body functions.</p>
+        </div>
+
+        <div class="nutrition-card">
+            <h3>Vitamins</h3>
+            <p>Support immunity and good health.</p>
+        </div>
+
+        <div class="nutrition-card">
+            <h3>Minerals</h3>
+            <p>Support bones and body functions.</p>
+        </div>
+
+        <div class="nutrition-card">
+            <h3>Fibre & Water</h3>
+            <p>Support digestion and hydration.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>Fresh & Nourish encourages healthy eating
+    through fruits, vegetables and balanced nutrition.</p>
+</section>
+
+<footer>
+    <p>© 2026 Fresh & Nourish | Eat Healthy, Stay Healthy</p>
+</footer>
+
+<script>
+const foods = [
+["Apple","Fruit","Carbohydrates, Fibre, Vitamins, Minerals","photo-1560806887-1e4cd0b6cbd6"],
+["Banana","Fruit","Carbohydrates, Fibre, Vitamins, Minerals","photo-1571771894821-ce9b6c11b08e"],
+["Orange","Fruit","Carbohydrates, Fibre, Vitamin C, Minerals","photo-1547514701-42782101795e"],
+["Mango","Fruit","Carbohydrates, Vitamins A & C, Fibre","photo-1553279768-865429fa0078"],
+["Papaya","Fruit","Carbohydrates, Vitamins A & C, Fibre","photo-1517282009859-f000ec3b26fe"],
+["Guava","Fruit","Carbohydrates, Proteins, Fibre, Vitamin C","photo-1536511132770-e5058c7e8c46"],
+["Carrot","Vegetable","Carbohydrates, Fibre, Vitamin A, Minerals","photo-1445282768818-728615cc910a"],
+["Spinach","Vegetable","Proteins, Vitamins A & K, Iron, Fibre","photo-1576045057995-568f588f82fb"],
+["Broccoli","Vegetable","Carbohydrates, Proteins, Vitamins C & K, Fibre","photo-1459411621453-7b03977f4bfc"],
+["Tomato","Vegetable","Carbohydrates, Vitamins A & C, Fibre","photo-1546094096-0df4bcaaa337"],
+["Potato","Vegetable","Carbohydrates, Proteins, Vitamin C, Potassium","photo-1518977676601-b53f82aba655"],
+["Beetroot","Vegetable","Carbohydrates, Fibre, Folate, Minerals","photo-1570197788417-0e82375c9371"]
+];
+
+let category = "All";
+
+function displayFoods() {
+    let search = document.getElementById("search").value.toLowerCase();
+
+    let filtered = foods.filter(food =>
+        (category === "All" || food[1] === category) &&
+        food[0].toLowerCase().includes(search)
+    );
+
+    document.getElementById("foodContainer").innerHTML =
+        filtered.map(food => `
+        <div class="food-card">
+            <img src="https://images.unsplash.com/${food[3]}?w=400"
+            alt="${food[0]}">
+            <h3>${food[0]}</h3>
+            <p>${food[2]}</p>
+        </div>
+        `).join("") || "<p>No foods found.</p>";
+}
+
+function showFoods(value, button) {
+    category = value;
+
+    document.querySelectorAll(".filters button").forEach(btn =>
+        btn.classList.remove("active")
+    );
+
+    button.classList.add("active");
+    displayFoods();
+}
+
+document.getElementById("search").addEventListener("input", displayFoods);
+
+displayFoods();
+</script>
+
+</body>
+</html>

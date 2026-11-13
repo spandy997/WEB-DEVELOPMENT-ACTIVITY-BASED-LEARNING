@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Daily Pulse</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f4f6fa;
+    color: #202b3c;
+}
+
+header {
+    background: #172b4d;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+header h1 {
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+header p {
+    color: #d5ddec;
+    margin-top: 6px;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+nav {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px #00000010;
+}
+
+nav a {
+    color: #172b4d;
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #e05a5a;
+}
+
+.container {
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    font-size: 25px;
+    color: #172b4d;
+}
+
+.welcome p {
+    color: #718096;
+    margin-top: 7px;
+}
+
+.search {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto 30px;
+    padding: 12px 16px;
+    border: 1px solid #d9dfeb;
+    border-radius: 25px;
+    outline: none;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px #172b4d12;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 18px;
+}
+
+.category {
+    color: #e05a5a;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card h3 {
+    color: #172b4d;
+    margin: 9px 0;
+    font-size: 19px;
+}
+
+.card p {
+    color: #657184;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+footer {
+    background: #172b4d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    nav a {
+        margin: 0 7px;
+        font-size: 12px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>THE DAILY PULSE</h1>
+    <p>NEWS • FACTS • UPDATES</p>
+</header>
+
+<nav>
+    <a href="#national">National</a>
+    <a href="#international">International</a>
+    <a href="#weather">Weather</a>
+    <a href="#current">Current Affairs</a>
+</nav>
+
+<div class="container">
+
+    <div class="welcome">
+        <h2>Today's Headlines</h2>
+        <p>Stay informed. Stay updated.</p>
+    </div>
+
+    <input type="text" class="search"
+    id="searchBox" placeholder="Search news...">
+
+    <div class="news-grid" id="newsGrid">
+
+        <div class="card" id="national">
+            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=700"
+            alt="India landmark">
+            <div class="card-content">
+                <span class="category">National</span>
+                <h3>India Strengthens Global Partnerships</h3>
+                <p>Prime Minister Narendra Modi continues to engage with world leaders. India is working to strengthen cooperation in technology, trade and development.</p>
+            </div>
+        </div>
+
+        <div class="card" id="international">
+            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=700"
+            alt="International relations">
+            <div class="card-content">
+                <span class="category">International</span>
+                <h3>India and Philippines Build Cooperation</h3>
+                <p>India and the Philippines have expanded cooperation in areas including technology, tourism, science and strategic relations.</p>
+            </div>
+        </div>
+
+        <div class="card" id="weather">
+            <img src="https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=700"
+            alt="Cloudy weather">
+            <div class="card-content">
+                <span class="category">Weather</span>
+                <h3>Stay Updated on Weather Conditions</h3>
+                <p>Weather conditions can change quickly. Check official forecasts and cyclone alerts from the India Meteorological Department.</p>
+            </div>
+        </div>
+
+        <div class="card" id="current">
+            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=700"
+            alt="Newspaper">
+            <div class="card-content">
+                <span class="category">Current Affairs</span>
+                <h3>Stay Aware of Important Developments</h3>
+                <p>Follow important updates in education, science, technology, government policies and events happening around the world.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 THE DAILY PULSE | Your Daily News Corner</p>
+</footer>
+
+<script>
+const searchBox = document.getElementById("searchBox");
+const cards = document.querySelectorAll(".card");
+
+searchBox.addEventListener("input", function() {
+    let searchText = searchBox.value.toLowerCase();
+
+    cards.forEach(function(card) {
+        let content = card.innerText.toLowerCase();
+
+        if (content.includes(searchText)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

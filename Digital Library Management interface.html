@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evergreen Digital Library</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: Georgia, serif;
+}
+
+body {
+    background: #f4f0e6;
+    color: #263b30;
+}
+
+header {
+    min-height: 360px;
+    background:
+    linear-gradient(rgba(10,25,18,0.55), rgba(10,25,18,0.7)),
+    url("https://images.unsplash.com/photo-1507842217343-583bb7270b66");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff8e9;
+    padding: 30px;
+}
+
+header h1 {
+    font-size: 55px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+    text-shadow: 2px 3px 8px #000;
+}
+
+header p {
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+nav {
+    background: #20372c;
+    padding: 17px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 3px 10px #0002;
+}
+
+nav a {
+    color: #f4e8cc;
+    text-decoration: none;
+    margin: 0 22px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #d6b66f;
+}
+
+.intro {
+    text-align: center;
+    padding: 35px 15px 15px;
+}
+
+.intro h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #294735;
+}
+
+.intro p {
+    color: #756b58;
+    font-size: 16px;
+}
+
+.search {
+    display: block;
+    width: 80%;
+    max-width: 480px;
+    margin: 22px auto;
+    padding: 13px 20px;
+    border: 1px solid #b49a63;
+    border-radius: 30px;
+    font-size: 15px;
+    outline: none;
+    background: #fffdf7;
+}
+
+.search:focus {
+    border: 2px solid #526b4d;
+    box-shadow: 0 0 8px #b49a63;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    margin: 25px 0;
+    color: #294735;
+    letter-spacing: 2px;
+}
+
+.genre-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 17px;
+    padding: 15px 7%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background: linear-gradient(145deg, #fffdf7, #e9eddf);
+    border: 1px solid #d7c8a6;
+    border-radius: 14px;
+    padding: 23px 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px #263b3018;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px #263b3035;
+    border-color: #a4874d;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #294735;
+}
+
+.card p {
+    color: #927343;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.card a {
+    display: inline-block;
+    background: #294735;
+    color: white;
+    padding: 9px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background: #a4874d;
+    transform: scale(1.05);
+}
+
+.no-results {
+    display: none;
+    text-align: center;
+    color: #9a493c;
+    padding: 20px;
+}
+
+#about {
+    background: linear-gradient(120deg, #294735, #17291f);
+    color: #f4e8cc;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 35px;
+}
+
+#about h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+#about p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+footer {
+    background: #17291f;
+    color: #e9dfc9;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #a4874d;
+}
+
+footer p {
+    margin: 5px;
+    font-size: 14px;
+}
+
+@media(max-width: 700px) {
+    .genre-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px 5%;
+        gap: 12px;
+    }
+
+    header h1 {
+        font-size: 38px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .card {
+        padding: 20px 7px;
+    }
+
+    .card h3 {
+        font-size: 17px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>EVERGREEN</h1>
+    <p>THE DIGITAL LIBRARY</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#genres">Genres</a>
+    <a href="#about">About</a>
+</nav>
+
+<section class="intro" id="home">
+    <h2>A World Between Pages</h2>
+    <p>Discover your next favourite book.</p>
+</section>
+
+<input type="text" class="search" id="search"
+placeholder="🔍  Search your favourite genre..."
+onkeyup="searchGenres()">
+
+<h2 class="section-title" id="genres">EXPLORE GENRES</h2>
+
+<div class="genre-container">
+
+<div class="card">
+<h3>Comedy</h3>
+<p>1,000 Books Available</p>
+<a href="#about">Explore Books</a>
+</div>
+
+<div class="card">
+<h3>Horror</h3>
+<p>2,000 Books Available</p>
+<a href="#about">Explore Books</a>
+</div>
+
+<div class="card">
+<h3>Mystery</h3>
+<p>850 Books Available</p>
+<a href="#about">Explore Books</a>
+</div>
+
+<div class="card">
+<h3>Thriller</h3>
+<p>1,200 Books Available</p>
+<a href="#about">Explore Books</a>
+</div>
+
+<div class="card">
+<h3>Psychological Thriller</h3>
+<p>650 Books Available</p>
+<a href="#about">Explore Books</a>
+</div>
+
+<div class="card">
+<h3>Romance</h3>
+<p>1,500 Books Available</p>
+<a href="#about">Explore Books</a>
+</div>
+
+<div class="card">
+<h3>Fantasy</h3>
+<p>900 Books Available</p>
+<a href="#about">Explore Books</a>
+</div>
+
+<div class="card">
+<h3>Science Fiction</h3>
+<p>750 Books Available</p>
+<a href="#about">Explore Books</a>
+</div>
+
+<div class="card">
+<h3>Adventure</h3>
+<p>500 Books Available</p>
+<a href="#about">Explore Books</a>
+</div>
+
+<div class="card">
+<h3>History</h3>
+<p>250 Books Available</p>
+<a href="#about">Explore Books</a>
+</div>
+
+</div>
+
+<p class="no-results" id="noResults">No genre found!</p>
+
+<section id="about">
+<h2>ABOUT OUR LIBRARY</h2>
+<p>
+Welcome to Evergreen Digital Library, a place where readers
+can explore different genres and discover books.
+Our goal is to make reading enjoyable and accessible.
+Discover new stories, explore different worlds and enjoy reading.
+</p>
+</section>
+
+<footer>
+<p>© 2026 Evergreen Digital Library</p>
+<p>Discover • Read • Imagine</p>
+</footer>
+
+<script>
+function searchGenres() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+    let count = 0;
+
+    cards.forEach(function(card) {
+        let name = card.querySelector("h3").innerText.toLowerCase();
+
+        if (name.includes(input)) {
+            card.style.display = "block";
+            count++;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    document.getElementById("noResults").style.display =
+        count === 0 ? "block" : "none";
+}
+</script>
+
+</body>
+</html>
